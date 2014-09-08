@@ -1,0 +1,25 @@
+#!/bin/bash
+cript pour sauvegarde de fichier par protocole FTP
+
+echo "---------------------------------------------------------";
+echo                     " Bienvenue en enfer :)";
+echo "---------------------------------------------------------";
+
+
+#Création de l'archive tar avec les chemins absolu des dossiers sauvegarder
+#echo "Creation de l'archive .tar";
+#tar -cvzf 
+
+
+
+#Connexion FTP vers Machine Virtuelle (192.168.1.15)
+HOST='sftp://test@192.168.1.15'
+USER= 'test'
+PASSWD='P@ssword'
+
+echo 'FTPing'
+
+sftp -i -n $HOST << END_SCRIPT
+quote USER $USER
+quote PASS $PASSWD
+
